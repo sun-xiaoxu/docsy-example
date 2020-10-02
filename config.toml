@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Goldydocs"  # 不知道你是哪里的title
+title = "Goldydocs"  # 不知道你是哪里的
 enableRobotsTXT = true
 theme = ["docsy"]
 enableGitInfo = true
