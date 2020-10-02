@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://sun-xiaoxu.github.io"
 title = "Goldydocs"  # 不知道你是哪里的
 enableRobotsTXT = true
 theme = ["docsy"]
