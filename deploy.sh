@@ -2,7 +2,6 @@ set -e
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 hugo
 cd public
-git remote set-url origin https://github.com/sun-xiaoxu/sun-xiaoxu.github.io.git
 git add .
 
 
