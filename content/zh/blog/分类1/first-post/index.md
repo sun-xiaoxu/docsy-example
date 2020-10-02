@@ -1,6 +1,6 @@
 ---
 date: 2018-10-06
-title: "docsy主题" # 浏览器标签显示内容
+title: "docsy主题修改了修改了" # 浏览器标签显示内容
 linkTitle: "docsy主题"
 description: "如何使用docsy主题"
 author: Riona MacNamara ([@rionam](https://twitter.com/bepsays))
