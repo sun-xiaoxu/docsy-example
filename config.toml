@@ -1,27 +1,29 @@
 baseURL = "/"
-title = "Goldydocs"
-
+title = "Goldydocs"  # 不知道你是哪里的title
 enableRobotsTXT = true
-
-# Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
-
-# Will give values to .Lastmod etc.
 enableGitInfo = true
 
-# Language settings
-contentDir = "content/en"
-defaultContentLanguage = "en"
+#语言设置
+contentDir = "content/zh"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
-
+[languages]
+[languages.zh]
+title = "猴子的博客"  #  浏览器和左上角的名字
+description = "A Docsy example site"
+languageName ="中文"
+weight = 1
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
-# Highlighting config
+
+	
+
+# 高亮配置
 pygmentsCodeFences = true
 pygmentsUseClasses = false
-# Use the new Chroma Go highlighter in Hugo.
 pygmentsUseClassic = false
 #pygmentsOptions = "linenos=table"
 # See https://help.farbox.com/pygments.html
@@ -49,23 +51,6 @@ anchor = "smart"
 # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
 id = "UA-00000000-0"
 
-# Language configuration
-
-[languages]
-[languages.en]
-title = "Goldydocs"
-description = "A Docsy example site"
-languageName ="English"
-# Weight used for sorting.
-weight = 1
-[languages.no]
-title = "Goldydocs"
-description = "Docsy er operativsystem for skyen"
-languageName ="Norsk"
-contentDir = "content/no"
-time_format_default = "02.01.2006"
-time_format_blog = "02.01.2006"
-
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -76,81 +61,60 @@ time_format_blog = "02.01.2006"
       # Uncomment if you want your chosen highlight style used for code blocks without a specified language
       # guessSyntax = "true"
 
-# Everything below this are Site Params
 
 [params]
-copyright = "The Docsy Authors"
+copyright = "孙晓旭"
 privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
 
-# Menu title if your navbar has a versions selector to access old versions of your site.
-# This menu appears only if you have at least one [params.versions] set.
 version_menu = "Releases"
-
-# Flag used in the "version-banner" partial to decide whether to display a 
-# banner on every page indicating that this is an archived version of the docs.
-# Set this flag to "true" if you want to display the banner.
 archived_version = false
-
-# The version number for the version of the docs represented in this doc set.
-# Used in the "version-banner" partial to display a version number for the 
-# current doc set.
 version = "0.0"
-
-# A link to latest version of the docs. Used in the "version-banner" partial to
-# point people to the main doc site.
 url_latest_version = "https://example.com"
 
-# Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/google/docsy-example"
-# An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/google/docsy"
+# 点击编辑后跳转到远程仓库修改博客
+github_repo = "https://github.com/sun-xiaoxu/docsy-example"
+github_project_repo = "https://github.com/sun-xiaoxu/docsy"
 
-# Specify a value here if your content directory is not in your repo's root directory
+#如果内容目录不在repo的根目录中，请在此处指定其他远程仓库地址
 # github_subdir = ""
 
-# Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+# 谷歌自定义搜索引擎ID。删除或注释掉以禁用搜索
+#gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
-# Enable Algolia DocSearch
+# 启用Algolia DocSearch
 algolia_docsearch = false
+# 启用 Lunr.js 离线搜索
+offlineSearch = true
 
-# Enable Lunr.js offline search
-offlineSearch = false
+# 代码块上启用语法高亮显示和复制按钮
+prism_syntax_highlighting = true
 
-# Enable syntax highlighting and copy buttons on code blocks with Prism
-prism_syntax_highlighting = false
-
-# User interface configuration
+# 用户界面配置
 [params.ui]
-# Enable to show the side bar menu in its compact state.
+# 启用以在压缩状态下显示侧栏菜单。
 sidebar_menu_compact = false
-#  Set to true to disable breadcrumb navigation.
+#  设置为true可禁用面包屑导航。
 breadcrumb_disable = false
-#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+# 设置为true以隐藏侧栏搜索框（如果启用搜索，顶部导航搜索框仍将显示）
 sidebar_search_disable = false
-#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = true
-# Set to true to disable the About link in the site footer
-footer_about_disable = false
+# 设置logo
+navbar_logo = false
+# 设置为true可禁用网站页脚中的“关于”链接
+footer_about_disable = true
 
-# Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
-# This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
-# If you want this feature, but occasionally need to remove the "Feedback" section from a single page,
-# add "hide_feedback: true" to the page's front matter.
+#用户反馈
 [params.ui.feedback]
-enable = true
+enable = false
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
 yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
 no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
 
-# Adds a reading time to the top of each doc.
-# If you want this feature, but occasionally need to remove the Reading time from a single page, 
-# add "hide_readingtime: true" to the page's front matter
+# 显示页面预计阅读完花费的时间
 [params.ui.readingtime]
-enable = false
+enable = true
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
